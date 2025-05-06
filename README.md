@@ -1,70 +1,106 @@
 🧹 Node Modules Finder (Web Version)
-This is a web-based tool built using Next.js that helps you explore the contents of the node_modules directory of your local project. It scans the filesystem on the server side and displays the folder structure through a modern React interface.
+A developer utility tool built with Next.js that helps you explore, visualize, and manage node_modules folders within your project. Perfect for developers working with monorepos, legacy codebases, or simply trying to clean up disk space.
 
-⚠️ This version is intended for local development use only. It relies on server-side file access and should not be deployed publicly without strict security controls.
+⚠️ This version is a local-only web app designed for development environments. Do not deploy to production without implementing security measures.
 
-📦 Features
-✅ Built using Next.js with App Router or Pages Router
+🔍 Why Do We Need This?
+Modern JavaScript applications often suffer from node_modules bloat—multiple layers of nested dependencies that:
 
-✅ Server-side scanning of the node_modules folder
+Eat up huge amounts of disk space.
 
-✅ Simple UI for listing installed packages
+Cause longer build times and GitHub CI delays.
 
-✅ Automatically updates list when revisiting the page
+Introduce duplicated packages and dependency confusion.
 
-✅ Uses built-in API route for scanning filesystem
+Are not easy to track or clean manually.
 
-🚀 Getting Started
-Follow these steps to run the app locally.
+This app helps you:
+✅ Quickly scan the structure of node_modules folders
+✅ Understand what dependencies are installed
+✅ Identify suspicious or bloated packages
+✅ Serve as a base for cleanup scripts or integrations
 
-1. Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/your-username/node-modules-finder-web.git
-cd node-modules-finder-web
-2. Install Dependencies
-bash
-Copy
-Edit
-npm install
-# or
-yarn install
-3. Run the Development Server
-bash
-Copy
-Edit
-npm run dev
-# or
-yarn dev
-Now, open your browser and go to:
+✨ Features
+🚀 Built with Next.js
 
-arduino
-Copy
-Edit
-http://localhost:3000
+🧠 Server-side file system access using Node.js fs
+
+📂 Visual representation of node_modules folder structure
+
+♻️ Instant refresh on reload or revisit
+
+🧱 Modular file utility logic for reuse and testing
+
+📦 Tech Stack
+Next.js (App Router or Pages Router)
+
+React
+
+Node.js (fs, path)
+
+TypeScript (optional)
+
 📁 Project Structure
-pgsql
-Copy
-Edit
+graphql
+
 .
 ├── pages/
-│   ├── index.tsx              # Main UI to show node_modules
+│   ├── index.tsx              # UI: Displays node_modules tree
 │   └── api/
-│       └── read-node-modules  # API route to read directories
+│       └── node-modules.ts    # API route: Reads directory
 │
 ├── utils/
-│   └── fileUtils.ts           # Logic to read folders using fs
+│   └── fileUtils.ts           # Logic for file scanning
 │
 ├── public/
 ├── styles/
 ├── package.json
-🧰 Technologies Used
-Next.js
+└── README.md
+🚀 Getting Started
+1. Clone the Repository
+bash
 
-React
+git clone https://github.com/your-username/node-modules-finder-web.git
+cd node-modules-finder-web
+2. Install Dependencies
+bash
 
-Node.js fs module
+npm install
+# or
+yarn install
+3. Start the Local Dev Server
+bash
 
-⚠️ Disclaimer
-This application accesses your file system through Node.js and is meant to be run locally only. Do not deploy this to a production server or expose it over the internet without implementing proper authentication and sandboxing.
+npm run dev
+# or
+yarn dev
+Then visit:
+
+arduino
+
+http://localhost:3000
+The app will scan the node_modules directory in the project root and display its structure in the browser.
+
+⚠️ Important Notes
+This is a developer tool, not a production app.
+
+Avoid deploying this on public servers—it has access to your local file system.
+
+Works best with Node.js projects that contain a node_modules directory in the root.
+
+🧪 Potential Enhancements
+Add delete/archive options for node_modules
+
+Support for multiple path inputs or scanning monorepos
+
+Disk size per dependency
+
+Electron packaging for desktop use (already available in a separate version)
+
+📄 License
+This project is licensed under the MIT License.
+Feel free to use, modify, and distribute.
+
+🤝 Contributing
+Pull requests are welcome. If you have suggestions for improvements or want to add features, feel free to fork the repo and create a PR.
+
