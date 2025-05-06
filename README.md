@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🧹 Node Modules Finder (Web Version)
+This is a web-based tool built using Next.js that helps you explore the contents of the node_modules directory of your local project. It scans the filesystem on the server side and displays the folder structure through a modern React interface.
 
-## Getting Started
+⚠️ This version is intended for local development use only. It relies on server-side file access and should not be deployed publicly without strict security controls.
 
-First, run the development server:
+📦 Features
+✅ Built using Next.js with App Router or Pages Router
 
-```bash
+✅ Server-side scanning of the node_modules folder
+
+✅ Simple UI for listing installed packages
+
+✅ Automatically updates list when revisiting the page
+
+✅ Uses built-in API route for scanning filesystem
+
+🚀 Getting Started
+Follow these steps to run the app locally.
+
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/node-modules-finder-web.git
+cd node-modules-finder-web
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+# or
+yarn install
+3. Run the Development Server
+bash
+Copy
+Edit
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Now, open your browser and go to:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+arduino
+Copy
+Edit
+http://localhost:3000
+📁 Project Structure
+pgsql
+Copy
+Edit
+.
+├── pages/
+│   ├── index.tsx              # Main UI to show node_modules
+│   └── api/
+│       └── read-node-modules  # API route to read directories
+│
+├── utils/
+│   └── fileUtils.ts           # Logic to read folders using fs
+│
+├── public/
+├── styles/
+├── package.json
+🧰 Technologies Used
+Next.js
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+React
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Node.js fs module
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⚠️ Disclaimer
+This application accesses your file system through Node.js and is meant to be run locally only. Do not deploy this to a production server or expose it over the internet without implementing proper authentication and sandboxing.
