@@ -40,28 +40,13 @@ Node.js (fs, path)
 
 TypeScript (optional)
 
-📁 Project Structure
-graphql
-
-.
-├── pages/
-│   ├── index.tsx              # UI: Displays node_modules tree
-│   └── api/
-│       └── node-modules.ts    # API route: Reads directory
-│
-├── utils/
-│   └── fileUtils.ts           # Logic for file scanning
-│
-├── public/
-├── styles/
-├── package.json
-└── README.md
 🚀 Getting Started
 1. Clone the Repository
 bash
 
 git clone https://github.com/your-username/node-modules-finder-web.git
 cd node-modules-finder-web
+
 2. Install Dependencies
 bash
 
